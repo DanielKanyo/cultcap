@@ -1,0 +1,145 @@
+.header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header-IPA {
+    height: 140px;
+    width: calc(100% - 200px);
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.header-image {
+    position: absolute;
+    left: -1000px;
+    width: calc(100% + 2000px);
+    height: 100%;
+    background-image: url("../Static/Images/tisza1.JPG");
+    background-position: 100% 45%;
+    background-size: cover;
+    opacity: 0.75;
+    filter: blur(3px);
+}
+
+.header-logo {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 300px);
+    width: 100%;
+    height: 600px;
+    background-image: url("../Static/Images/cultcap-logo-transzparens-hatter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding-bottom: 30px;
+}
+
+.content > div {
+    width: 1000px;
+    margin: -120px auto 0 auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+.text {
+    text-align: justify;
+    margin: 40px 0;
+}
+
+.logal-notice-txt {
+    text-align: justify;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text ul li {
+    padding: 10px 0;
+    list-style-type: decimal;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 1000px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+}
+
+.side-btn-container {
+    position: absolute;
+    z-index: 5;
+    top: 140px;
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.language-selector-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1070px) {
+    .header-IPA {
+        height: 90px;
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    .header-IPA img {
+        width: 200px;
+    }
+
+    .content > div {
+        width: auto;
+    }
+
+    .content > div > div {
+        padding: 12px 18px;
+        margin: 10px;
+    }
+
+    .footer {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer img:first-of-type {
+        height: 40px;
+        margin-bottom: 30px;
+    }
+
+    .side-btn-container {
+        top: 90px;
+        padding: 15px 12px;
+    }
+
+    .language-selector {
+        display: none;
+    }
+
+    .language-selector-mobile {
+        display: block;
+    }
+
+    .language-selector-in-drawer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 30px;
+    }
+}
