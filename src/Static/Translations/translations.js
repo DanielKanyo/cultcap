@@ -1,5 +1,6 @@
 export const TRANSLATIONS = {
     hun: {
+        docDownloadText: 'Nyitó rendezvény - Cultcap',
         section1: `CULTCAP – A természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében`,
         section2: `(Capturing natural and cultural values in the region of Kanjiza and Szeged)`,
         section3: `A szegedi Agora Alapítvány a Társadalomkutatásért, együttműködve Magyarkanizsa
@@ -60,6 +61,7 @@ export const TRANSLATIONS = {
             tartalomnak.`
     },
     srb: {
+        docDownloadText: 'Otvaranje projekta - Cultcap',
         section1: `CULTCAP – Očuvanje prirodnih i kulturnih vrednosti u regionu Kanjiže i Segedina`,
         section2: `(Capturing natural and cultural values in the region of Kanjiza and Szeged)`,
         section3: `Fondacija za društveno istraživanje Agora iz Segedina, u saradnji sa opštinom Kanjiža sprovodi
@@ -115,6 +117,7 @@ export const TRANSLATIONS = {
             Upravljačkog tela Programa.`
     },
     eng: {
+        docDownloadText: '',
         section1: `CULTCAP – Capturing natural and cultural values in the region of Kanjiza and Szeged`,
         section3: `The CULTCAP – “Capturing natural and cultural values in the region of Kanjiza and Szeged” is a
             continuation of the CULTSTREAM and CULTRAIL projects. The aim of the new project is to

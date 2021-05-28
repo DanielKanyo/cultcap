@@ -6,17 +6,14 @@ import SwipeableDrawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import Footer from './Footer/Footer';
+
 import logoEng from '../Static/Images/IPA_logo1.jpg';
 import logoHun from '../Static/Images/IPA_logo2.jpg';
 import logoSrb from '../Static/Images/IPA_logo3.jpg';
-import euEng from '../Static/Images/euEng.png';
-import euHun from '../Static/Images/euHun.png';
-import euSrb from '../Static/Images/euSrb.png';
-import szomszedEng from '../Static/Images/szomszedEng.png';
-import szomszedHun from '../Static/Images/szomszedHun.png';
-import szomszedSrb from '../Static/Images/szomszedSrb.png';
 
 import nyito_file_hun from '../Static/Files/Nyito_rendezveny_CULTCAP_HU.doc';
+import nyito_file_srb from '../Static/Files/Nyito_rendezveny_CULTCAP_SRB.doc';
 
 import { TRANSLATIONS } from '../Static/Translations/translations';
 
@@ -87,35 +84,41 @@ const App = () => {
         }
     }
 
-    const getEuLogo = lang => {
+    const getDownloadButton = (lang) => {
         switch (lang) {
             case 'hun':
-                return <img src={euHun} alt='eu' height='80px' />;
+                return (
+                    <Button
+                        className={classes.downloadBtn}
+                        variant='contained'
+                        target='_blank'
+                        href={nyito_file_hun}
+                        download
+                    >
+                        {TRANSLATIONS[lang]['docDownloadText']}
+                    </Button>
+                );
             case 'eng':
-                return <img src={euEng} alt='eu' height='80px' />;
+                return null;
             case 'srb':
-                return <img src={euSrb} alt='eu' height='80px' />;
+                return (
+                    <Button
+                        className={classes.downloadBtn}
+                        variant='contained'
+                        target='_blank'
+                        href={nyito_file_srb}
+                        download
+                    >
+                        {TRANSLATIONS[lang]['docDownloadText']}
+                    </Button>
+                );
 
             default:
-                return <img src={euHun} alt='eu' height='80px' />;
+                return null;
         }
     }
 
-    const constGoodNeighBoursLogo = lang => {
-        switch (lang) {
-            case 'hun':
-                return <img src={szomszedHun} alt='eu' height='80px' />;
-            case 'eng':
-                return <img src={szomszedEng} alt='eu' height='80px' />;
-            case 'srb':
-                return <img src={szomszedSrb} alt='eu' height='80px' />;
-
-            default:
-                return <img src={szomszedHun} alt='eu' height='100px' />;
-        }
-    }
-
-    const languageButtons = () => (
+    const getLanguageButtons = () => (
         <div>
             <Button
                 className={classes.btn}
@@ -152,7 +155,7 @@ const App = () => {
                     <div className='language-selector-mobile'>
                         <SwipeableDrawer anchor='top' open={drawerState} onClose={() => setDrawerState(false)}>
                             <div className='language-selector-in-drawer'>
-                                {languageButtons()}
+                                {getLanguageButtons()}
                             </div>
                         </SwipeableDrawer>
                         <IconButton aria-label="delete" className={classes.margin} onClick={() => setDrawerState(true)}>
@@ -160,19 +163,11 @@ const App = () => {
                         </IconButton>
                     </div>
                     <div className='language-selector'>
-                        {languageButtons()}
+                        {getLanguageButtons()}
                     </div>
                 </div>
                 <div className='side-btn-container'>
-                    <Button
-                        className={classes.downloadBtn}
-                        variant='contained'
-                        target='_blank'
-                        href={nyito_file_hun}
-                        download
-                    >
-                        Nyitó rendezvény - Cultcap
-                    </Button>
+                    {getDownloadButton(language)}
                 </div>
                 <div className='header-image'></div>
                 <div className='header-logo'></div>
@@ -273,10 +268,7 @@ const App = () => {
                 </div>
             </div>
 
-            <div className='footer'>
-                {getEuLogo(language)}
-                {constGoodNeighBoursLogo(language)}
-            </div>
+            <Footer language={language} />
         </div>
     );
 }
