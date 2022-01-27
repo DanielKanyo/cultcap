@@ -58,7 +58,29 @@ export const TRANSLATIONS = {
             Együttműködési Program Magyarország-Szerbia által. A weboldal tartalmáért teljes mértékben
             Magyarkanizsa Önkormányzata vállalja a felelősséget, és az semmilyen körülmények között nem
             tekinthető az Európai Unió és / vagy a programot Irányító Hatóságnak állásfoglalását tükröző
-            tartalomnak.`
+            tartalomnak.`,
+        openingEvent: `CULTCAP - NYITÓ RENDEZVÉNY (Szeged, 2021. június 8.)`,
+        workshop: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – HUSRB/1903/33/0013 azonosítószámú
+            projekt keretében 2021. szeptember 24-én, Szegeden, megvalósításra került a Workshop I. (Modern technológiák alkalmazása) rendezvény.
+            Fotók1-8`,
+        workshop2: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – 
+            HUSRB/1903/33/0013 azonosítószámú projekt keretében 2021. szeptember 30-án és 2021. október 1-én, Szegeden,
+            megvalósításra került a Metanoia Art Festival rendezvény.
+            Fotók1-11`,
+        links: {
+            title: 'Média megjelenések:',
+            links: [
+                'https://www.magyarszo.rs/hu/4836/vajdasag_magyarkanizsa/258430/A-Cnesa-%C3%A9ve-magyarkanizsa.htm',
+                'https://www.vajma.info/cikk/kultura/15047/Modern-eszkozok-a-magyarkanizsai-Muveszetek-Hazaban.html',
+                'https://pannonrtv.com/rovatok/onkormanyzatok/ertekes-beruhazasok-cnesaban',
+                'https://rtv.rs/hu/vajdas%C3%A1g/a-term%C3%A9szeti-%C3%A9s-kultur%C3%A1lis-%C3%A9rt%C3%A9kek-meg%C5%91rz%C3%A9se-szegeden-%C3%A9s-magyarkanizs%C3%A1n_1306400.html',
+                'http://www.kanjiza.rs/ujlap/site/index.html?id=2647',
+                'https://www.facebook.com/permalink.php?story_fbid=297551889078164&id=100064700649678',
+                'https://www.youtube.com/watch?v=WK2UTpninA0',
+                'https://www.facebook.com/cult.cap/posts/310650361101695',
+                'https://www.facebook.com/cult.cap/posts/310655084434556'
+            ]
+        }
     },
     srb: {
         docDownloadText: 'Otvaranje projekta - Cultcap',
@@ -114,7 +136,23 @@ export const TRANSLATIONS = {
         legalNoticeTxt: `Ova internet stranica je organizovan uz finansijsku podršku Evropske unije kroz Interreg-IPA program
             prekogranične saradnje Mađarska-Srbija. Za sadržaj ove internet stranice je odgovoran iskljčivo
             Opština Kanjiža i sadržaj ovog dokumenta ne odražava zvanično mišljenje Evropske unije i/ili
-            Upravljačkog tela Programa.`
+            Upravljačkog tela Programa.`,
+        openingEvent: `CULTCAP - NYITÓ RENDEZVÉNY (Szeged, 2021. június 8.)`,
+        workshop: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – HUSRB/1903/33/0013 azonosítószámú
+            projekt keretében 2021. szeptember 24-én, Szegeden, megvalósításra került a Workshop I. (Modern technológiák alkalmazása) rendezvény.
+            Fotók1-8`,
+        workshop2: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – 
+            HUSRB/1903/33/0013 azonosítószámú projekt keretében 2021. szeptember 30-án és 2021. október 1-én, Szegeden,
+            megvalósításra került a Metanoia Art Festival rendezvény.
+            Fotók1-11`,
+        links: {
+            title: 'Medijska zastupljenost:',
+            links: [
+                'http://www.kanjiza.rs/ujlap/site/index-sr.html?id=2647',
+                'https://www.facebook.com/permalink.php?story_fbid=297559909077362&id=100064700649678',
+                'https://www.youtube.com/watch?v=WK2UTpninA0'
+            ]
+        }
     },
     eng: {
         docDownloadText: '',
@@ -133,6 +171,31 @@ export const TRANSLATIONS = {
         legalNoticeTxt: `This website has been produced with the financial assistance of the European Union through the
             Interreg-IPA Cross-border Cooperation Programme Hungary-Serbia. The content of the website is the
             sole responsibility of Municipality of Kanjiza and can under no circumstances be regarded as
-            reflecting the position of the European Union and/or the Managing Authority of the Programme.`
-    }
+            reflecting the position of the European Union and/or the Managing Authority of the Programme.`,
+        openingEvent: `CULTCAP - NYITÓ RENDEZVÉNY (Szeged, 2021. június 8.)`,
+        workshop: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – HUSRB/1903/33/0013 azonosítószámú
+            projekt keretében 2021. szeptember 24-én, Szegeden, megvalósításra került a Workshop I. (Modern technológiák alkalmazása) rendezvény.
+            Fotók1-8`,
+        workshop2: `A „Természeti és kulturális értékek megőrzése Szeged és Magyarkanizsa térségében” című, CULTCAP – 
+            HUSRB/1903/33/0013 azonosítószámú projekt keretében 2021. szeptember 30-án és 2021. október 1-én, Szegeden,
+            megvalósításra került a Metanoia Art Festival rendezvény.
+            Fotók1-11`,
+        links: {
+            title: 'Media appearances:',
+            links: [
+                'https://www.magyarszo.rs/hu/4836/vajdasag_magyarkanizsa/258430/A-Cnesa-%C3%A9ve-magyarkanizsa.htm',
+                'https://www.vajma.info/cikk/kultura/15047/Modern-eszkozok-a-magyarkanizsai-Muveszetek-Hazaban.html',
+                'https://pannonrtv.com/rovatok/onkormanyzatok/ertekes-beruhazasok-cnesaban',
+                'https://rtv.rs/hu/vajdas%C3%A1g/a-term%C3%A9szeti-%C3%A9s-kultur%C3%A1lis-%C3%A9rt%C3%A9kek-meg%C5%91rz%C3%A9se-szegeden-%C3%A9s-magyarkanizs%C3%A1n_1306400.html',
+                'http://www.kanjiza.rs/ujlap/site/index.html?id=2647',
+                'https://www.facebook.com/permalink.php?story_fbid=297551889078164&id=100064700649678',
+                'https://www.youtube.com/watch?v=WK2UTpninA0',
+                'https://www.facebook.com/cult.cap/posts/310650361101695',
+                'https://www.facebook.com/cult.cap/posts/310655084434556',
+                'http://www.kanjiza.rs/ujlap/site/index-sr.html?id=2647',
+                'https://www.facebook.com/permalink.php?story_fbid=297559909077362&id=100064700649678',
+                'https://www.youtube.com/watch?v=WK2UTpninA0'
+            ]
+        }
+    },
 }

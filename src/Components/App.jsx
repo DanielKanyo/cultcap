@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import { useLightbox } from 'simple-react-lightbox';
+import { SRLWrapper } from 'simple-react-lightbox';
 
 import Footer from './Footer/Footer';
 
@@ -16,6 +20,7 @@ import nyito_file_hun from '../Static/Files/Nyito_rendezveny_CULTCAP_HU.doc';
 import nyito_file_srb from '../Static/Files/Nyito_rendezveny_CULTCAP_SRB.doc';
 
 import { TRANSLATIONS } from '../Static/Translations/translations';
+import { OPENING_EVENT_IMAGES, WORKSHOP_IMAGES, WORKSHOP_IMAGES2 } from '../Static/Constants/constants';
 
 import './App.css';
 
@@ -48,13 +53,46 @@ const useStyles = makeStyles(() => ({
     },
     downloadBtn: {
         backgroundColor: 'white'
-    }
+    },
+    galleryContainer: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden'
+    },
+    gridList: {
+        width: 900,
+    },
+    img: {
+        cursor: 'zoom-in'
+    },
 }));
 
 const App = () => {
     const classes = useStyles();
     const [language, setLanguage] = useState('hun');
     const [drawerState, setDrawerState] = useState(false);
+    const { openLightbox } = useLightbox();
+    const [isMobileVisitor, setMobileVisitor] = useState(false);
+    const COLS = 3;
+    const cellHeight = {
+        desktopVisitor: 230,
+        mobileVisitor: 240
+    };
+    const options = {
+        buttons: {
+            showDownloadButton: false,
+            showThumbnailsButton: false
+        }
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        if (window.innerWidth < 600) {
+            setMobileVisitor(true);
+        }
+    }, []);
 
     const getInterregLink = (lang) => {
         switch (lang) {
@@ -184,6 +222,96 @@ const App = () => {
                         >
                             interreg-ipa-husrb.com
                         </Button>
+                        <p>{TRANSLATIONS[language]['links']['title']}</p>
+                        <div className='links-container'>
+                            {
+                                TRANSLATIONS[language]['links']['links'].map((link) => {
+                                    return (
+                                        <p key={link}>
+                                            <a href={link} target="_blank" rel="noreferrer">
+                                                {link}
+                                            </a>
+                                        </p>
+                                    )
+                                })
+                            }
+                        </div>
+                    </Card>
+                    <Card elevation={6} className={classes.card}>
+                        <p>{TRANSLATIONS[language]['workshop2']}</p>
+                        <div className='gallery'>
+                            <div className={classes.galleryContainer}>
+                                <GridList
+                                    cellHeight={!isMobileVisitor ? cellHeight.desktopVisitor : cellHeight.mobileVisitor}
+                                    className={classes.gridList}
+                                    cols={COLS}
+                                >
+                                    {
+                                        WORKSHOP_IMAGES2.map((image, i) => (
+                                            <GridListTile
+                                                key={i + OPENING_EVENT_IMAGES.length + WORKSHOP_IMAGES.length}
+                                                cols={!isMobileVisitor ? image.cols : 3}
+                                                onClick={() => openLightbox(i + OPENING_EVENT_IMAGES.length + WORKSHOP_IMAGES.length)}
+                                            >
+                                                <img loading="lazy" src={image.src} alt={image.title} className={classes.img} />
+                                            </GridListTile>
+                                        ))
+                                    }
+                                </GridList>
+                            </div>
+                        </div>
+                    </Card>
+                    <Card elevation={6} className={classes.card}>
+                        <p>{TRANSLATIONS[language]['workshop']}</p>
+                        <div className='gallery'>
+                            <div className={classes.galleryContainer}>
+                                <GridList
+                                    cellHeight={!isMobileVisitor ? cellHeight.desktopVisitor : cellHeight.mobileVisitor}
+                                    className={classes.gridList}
+                                    cols={COLS}
+                                >
+                                    {
+                                        WORKSHOP_IMAGES.map((image, i) => (
+                                            <GridListTile
+                                                key={i + OPENING_EVENT_IMAGES.length}
+                                                cols={!isMobileVisitor ? image.cols : 3}
+                                                onClick={() => openLightbox(i + OPENING_EVENT_IMAGES.length)}
+                                            >
+                                                <img loading="lazy" src={image.src} alt={image.title} className={classes.img} />
+                                            </GridListTile>
+                                        ))
+                                    }
+                                </GridList>
+                            </div>
+                        </div>
+                    </Card>
+                    <Card elevation={6} className={classes.card}>
+                        <p>{TRANSLATIONS[language]['openingEvent']}</p>
+                        <div className='gallery'>
+                            <div className={classes.galleryContainer}>
+                                <GridList
+                                    cellHeight={!isMobileVisitor ? cellHeight.desktopVisitor : cellHeight.mobileVisitor}
+                                    className={classes.gridList}
+                                    cols={COLS}
+                                >
+                                    {
+                                        OPENING_EVENT_IMAGES.map((image, i) => (
+                                            <GridListTile
+                                                key={i}
+                                                cols={!isMobileVisitor ? image.cols : 3}
+                                                onClick={() => openLightbox(i)}
+                                            >
+                                                <img loading="lazy" src={image.src} alt={image.title} className={classes.img} />
+                                            </GridListTile>
+                                        ))
+                                    }
+                                </GridList>
+                            </div>
+
+                            <SRLWrapper elements={[...OPENING_EVENT_IMAGES, ...WORKSHOP_IMAGES, ...WORKSHOP_IMAGES2]} options={options} />
+                        </div>
+                    </Card>
+                    <Card elevation={6} className={classes.card}>
                         {
                             TRANSLATIONS[language]['section1'] &&
                             <h2>{TRANSLATIONS[language]['section1']}</h2>

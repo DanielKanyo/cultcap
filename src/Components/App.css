@@ -142,4 +142,10 @@
         justify-content: flex-end;
         padding: 30px;
     }
+
+    .links-container p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
